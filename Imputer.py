@@ -8,10 +8,8 @@ evaluation. BMC Med Inform Decis Mak. 2016 Jul 25;16 Suppl 3:74.
 
 import numpy as np
 from skrebate import ReliefF, MultiSURF                # The skrebate module needs to be installed
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import euclidean_distances
-import warnings
 
 
 class Impute (object):
@@ -21,7 +19,7 @@ class Impute (object):
         hence for NN determination.
     
     The variable with missing instances is used as a class feature and ranking algorithms are used to 
-        select the variables that best correlate with the "class". The search is performed considering
+        select the variables that best correlate with the "class". The search is performed consdiering
         complete cases and works on normalized (by span) dataset.
         
     Compared to the original algorithm described by Beretta et al., the code allows the automated
@@ -88,12 +86,13 @@ class Impute (object):
     
         Returns
         ----------
-        X : {array-like, sparse matrix}, shape = [n_samples, n_features]
+        X_ : {array-like, sparse matrix}, shape = [n_samples, n_features]
             The imputed dataset.
         
         """
         
         nInst, nFeat = np.shape (X)
+        X_ = X.copy ()
         
         # Imputation procedure
         # find instances and features with missing or complete values
@@ -175,20 +174,21 @@ class Impute (object):
                 NN = index [order]
                 
                 # order feature and find value (mean of k values)
+                print (self.k)
                 if self.k == None:              
                     distances = 1/distances
                     # calculate k via the elbow method
                     kNN = self.elbow (distances [order, 0], NN)
-                else:    
+                else:
                     if self.k > nComplete_inst:
                         kNN = NN [:nComplete_inst]
                     else:
                         kNN = NN [:self.k]
                 imputed_value = np.mean (c_X [kNN, cf])
-                X [cm, cf] = imputed_value
+                X_ [cm, cf] = imputed_value
                 
         # return the imputed dataset
-        X_ = X.astype (float)
+        X_ = X_.astype (float)
         return X_
     
     
@@ -214,6 +214,7 @@ class Impute (object):
         # To be used to find the optimal number of features or k
         nValid = ranked_feat.shape [0]
         best = 0
+        point = 0
         for cval in range (1, nValid -1):
             deriv2 = abs (scores [cval + 1] + scores [cval - 1] - 2 * scores [cval])
             if deriv2 > best:
@@ -221,3 +222,4 @@ class Impute (object):
                 point = cval
 
         return ranked_feat [:point+1]
+    
