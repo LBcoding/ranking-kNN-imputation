@@ -24,7 +24,7 @@ setup(
         'Intended Audience :: Information Technology',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.x',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Utilities'
     ],
     keywords=['machine learning', 'missing data', 'imputation'],
