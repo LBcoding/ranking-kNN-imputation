@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='rkNN_imputer',
-    version=1.2,
+    version="1.2",
     author='Loernzo Beretta',
     author_email='lorberimm@hotmail.com',
     packages=find_packages(),
