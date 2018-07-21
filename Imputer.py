@@ -11,7 +11,7 @@ from skrebate import ReliefF, MultiSURF                # The skrebate module nee
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import euclidean_distances
-#import matplotlib.pyplot as plt
+import warnings
 
 
 class Impute (object):
@@ -21,12 +21,13 @@ class Impute (object):
         hence for NN determination.
     
     The variable with missing instances is used as a class feature and ranking algorithms are used to 
-        serach the variables that best correlate with the class. The search is performed condiering
-        complete cases and on normalized (by span) dataset.
+        select the variables that best correlate with the "class". The search is performed considering
+        complete cases and works on normalized (by span) dataset.
         
-    Compared to the original algorithm described by Beretta et al., the code implements an automated
-        selection of relevant features and k neighbours for imputation.
+    Compared to the original algorithm described by Beretta et al., the code allows the automated
+        selection of relevant features and optimizes the number k neighbors used for imputation.
         The elbow method is used to automatically select the parameters.
+        Alternatively, the number of features and k neighobrs can be manually set.
         
     
     Parameters
@@ -52,22 +53,46 @@ class Impute (object):
         self.k = k
  
        
-    def fit (self, X):
+    def fit (self, X, Y=None):
         '''Impute missing data
         
         Parameters
         ----------
 
-        X: numpy array (?=missing values)  
+        X : {array-like, sparse matrix}, shape = [n_samples, n_features] 
+            where, missing values are exclusively coded by "?"  
         
         
         Returns
         -------
         
-        X_: the imputed dataset
+        self
         
-        '''        
-
+        '''  
+        
+        if np.any (X == "?") == False:
+            raise ValueError("No missing values coded as (?) can be detected")
+        
+        return self
+        
+    
+        
+    def transform (self, X):
+        """Impute missing values in X.
+        
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape = [n_samples, n_features]
+            The input data to complete.
+            
+    
+        Returns
+        ----------
+        X : {array-like, sparse matrix}, shape = [n_samples, n_features]
+            The imputed dataset.
+        
+        """
+        
         nInst, nFeat = np.shape (X)
         
         # Imputation procedure
@@ -163,9 +188,8 @@ class Impute (object):
                 X [cm, cf] = imputed_value
                 
         # return the imputed dataset
-        X = X.astype (float)
-        self.dataset_ = X
-        return self
+        X_ = X.astype (float)
+        return X_
     
     
     def ranker (self, cn_X, cf, af, nFeat):
@@ -197,4 +221,3 @@ class Impute (object):
                 point = cval
 
         return ranked_feat [:point+1]
-    
