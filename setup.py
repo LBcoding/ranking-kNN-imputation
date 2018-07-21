@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jul 21 19:20:20 2018
-
 @author: Lorenzo Beretta
 """
 
