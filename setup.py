@@ -3,7 +3,7 @@
 @author: Lorenzo Beretta
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
@@ -11,7 +11,6 @@ setup(
     version="1.2",
     author='Loernzo Beretta',
     author_email='lorberimm@hotmail.com',
-    packages=find_packages(),
     url='https://github.com/LBcoding/ranking-kNN-imputation',
     license='License :: OSI Approved :: MIT License',
     description='Ranking and kNN imputation algorithm',
