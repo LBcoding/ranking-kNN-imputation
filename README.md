@@ -4,7 +4,8 @@ An imputation method based on ranking and nearest neighbor (kNN) as described in
 Beretta L, Santaniello A. "Nearest neighbor imputation algorithms: a critical evaluation". BMC Med Inform Decis Mak. 2016 Jul 25;16 Suppl 3:74. https://doi.org/10.1186/s12911-016-0318-z
 
 
-    The method imputes missing data combining a non linear feature selection and a nearest neighbor imputation algorithm.
+    The method imputes missing data combining a non linear feature selection and a 
+        nearest neighbor imputation algorithm.
 
     The algoroithm discards features that may be irrelevant or noisy for distance determination and hence for NN determination.
 
