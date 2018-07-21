@@ -19,7 +19,7 @@ setup(
     description='Ranking and kNN imputation algorithm',
     long_description='An imputation method based on ranking and nearest neighbor (kNN).',
     zip_safe=True,
-    install_requires=['numpy', 'scipy', 'scikit-learn', 'skrebate'],
+    #install_requires=['numpy', 'scipy', 'scikit-learn', 'skrebate'],
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
