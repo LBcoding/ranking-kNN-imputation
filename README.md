@@ -30,22 +30,22 @@ The sklearn package Rebate (https://github.com/EpistasisLab/scikit-rebate) needs
 The algorithm is designed to be integrated directly into scikit-learn machine learning workflows. ReliefF algorithms are used as feature selection step to optimize the search of closest neighbors.
 
 
-import numpy as np
-from skrebate import MultiSURF
-from Imputer import Impute
+    import numpy as np
+    from skrebate import MultiSURF
+    from Imputer import Impute
 
-dummy = np.array ((["0.2", "0.4", "5", "0.4"],
+    dummy = np.array ((["0.2", "0.4", "5", "0.4"],
                     ["?", "0.4", "8", "0.5"],
                     ["0.1", "0.8", "3", "0.2"],
                     ["0.3", "0.2", "?", "0.1"]))
 
-imp = Impute (MultiSURF(), k=1)
-imp.fit (dummy)
-imputed_dummy = imp.transform (dummy)
+    imp = Impute (MultiSURF(), k=1)
+    imp.fit (dummy)
+    imputed_dummy = imp.transform (dummy)
 
-print (dummy)
-print ("")
-print (imputed_dummy)
+    print (dummy)
+    print ("")
+    print (imputed_dummy)
 
 
     
