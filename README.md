@@ -25,6 +25,9 @@ Non-linear feature ranking algorithm are recommended to select relevant features
 By default the algorithm works using ReliefF-based methods.
 The sklearn package Rebate (https://github.com/EpistasisLab/scikit-rebate) needs to be installed.
 
+# Installation
+    
+    pip install rkNN_imputer
 
 # Usage
 The algorithm is designed to be integrated directly into scikit-learn machine learning workflows. ReliefF algorithms are used as feature selection step to optimize the search of closest neighbors.
