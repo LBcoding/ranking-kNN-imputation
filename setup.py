@@ -1,14 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-@author: Lorenzo Beretta
-"""
-
 import setuptools
 
 setuptools.setup(
     name='rkNN_imputer',
     version="1.2",
-    author='Loernzo Beretta',
+    author='Lorenzo Beretta',
     author_email='lorberimm@hotmail.com',
     description='Ranking and kNN imputation algorithm',
     long_description='An imputation method based on ranking and nearest neighbor (kNN)',
