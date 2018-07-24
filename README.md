@@ -85,13 +85,13 @@ self : Imputer
     
 Impute all missing values in X.
 
-Parameters: 
+_Parameters: 
 
 X : {array-like, sparse matrix}, shape = (n_samples, n_features)
 
 (The input data to complete, where missing data are coded as ?).
 
-Returns: X_: {array-like, sparse matrix}, shape = (n_samples, n_features)
+_Returns: X_: {array-like, sparse matrix}, shape = (n_samples, n_features)
 
 (The transformed (imputed) dataset).
 
