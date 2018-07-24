@@ -12,7 +12,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics.pairwise import euclidean_distances
 
 
-class Impute (object):
+class rkNN (object):
     """Impute missing data combining a non linear feature selection and nearest neighbor imputation.
     
     The algoroithm discards features that may be irrelevant or noisy for distance determination and 
