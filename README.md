@@ -54,15 +54,15 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
 # Usage details
     class rkNN_imputer.rkNN rkNN (estimator=MultiSURF (), k=None)
 
-Parameters: estimator: object, optional (default=MultiSURF)
+Parameters: 
 
-...........The base estimator that ranks features for the selection of the most informative attributes for nearest neighbour
-...........determination. Any ranking algorithm is suitable. Preferred choices, ReliefF-based algorithms (as in the Rebate package).     
+estimator: object, optional (default=MultiSURF)
+
+(The base estimator that ranks features for the selection of the most informative attributes for nearest neighbour determination. Any ranking algorithm is suitable. Preferred choices, ReliefF-based algorithms (as in the Rebate package)).   
                 
-...........k: integer, optional (default=None)
+k: integer, optional (default=None)
                
-...........The number of k-neighbours to consider to impute the missing value. If = None the number is autoamtically optimized.
-...........For values of k > number of instances, the method is equal to mean imputation. 
+(The number of k-neighbours to consider to impute the missing value. If = None the number is autoamtically optimized. For values of k > number of instances, the method is equal to mean imputation).
 
 Attributes:
 
@@ -70,25 +70,30 @@ Attributes:
 
 Fit the imputer on X.
 
-Parameters: X : {array-like, sparse matrix}, shape (n_samples, n_features)
+Parameters: 
 
-...........Input data, where n_samples is the number of samples and n_features is the number of features.
+X : {array-like, sparse matrix}, shape (n_samples, n_features)
 
-Returns: self : Imputer
+(Input data, where n_samples is the number of samples and n_features is the number of features).
 
-........Returns self.
+Returns: 
+
+self : Imputer
+
 
     transform(X)
     
 Impute all missing values in X.
 
-Parameters: X : {array-like, sparse matrix}, shape = (n_samples, n_features)
+Parameters: 
 
-...........The input data to complete.
+X : {array-like, sparse matrix}, shape = (n_samples, n_features)
+
+(The input data to complete, where missing data are coded as ?).
 
 Returns: X_: {array-like, sparse matrix}, shape = (n_samples, n_features)
 
-........The transformed (imputed) dataset
+(The transformed (imputed) dataset).
 
 
                 
