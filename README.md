@@ -84,7 +84,7 @@ Impute all missing values in X.
 
 Parameters:	      X : {array-like, sparse matrix}, shape = (n_samples, n_features)
 
-\                 The input data to complete.
+\t                 The input data to complete.
 
 Returns:          X_: {array-like, sparse matrix}, shape = (n_samples, n_features)
 
