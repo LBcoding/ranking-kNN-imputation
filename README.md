@@ -32,7 +32,6 @@ The sklearn package Rebate (https://github.com/EpistasisLab/scikit-rebate) needs
 # Usage
 The algorithm is designed to be integrated directly into scikit-learn machine learning workflows. ReliefF algorithms are used as feature selection step to optimize the search of closest neighbors.
 
-
     import numpy as np
     from rkNN_imputer.rkNN import rkNN
 
@@ -51,5 +50,26 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
     print ("")
     print (imputed_dummy)
 
+
+# Usage details
+    class rkNN_imputer.rkNN rkNN (estimator=MultiSURF (), k=None)
+
+Parameters:     estimator: object, optional (default=MultiSURF)
+
+                The base estimator that ranks features for the selection of the most informative attributes for nearest neighbour
+                determination. Any ranking algorithm is suitable. Preferred choices, ReliefF-based algorithms (as in the Rebate                         package).
+                
+                k: integer, optional (default=None)
+                
+                The number of k-neighbours to consider to impute the missing value. If = None the number is autoamtically optimized. For
+                values of k > number of instances, the method is equal to mean imputation. 
+
+Attributes:
+
+    fit (X, Y=None)
+
+
+                
+                
 
     
