@@ -35,7 +35,7 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
 
     import numpy as np
     from skrebate import MultiSURF
-    from rkNN_imputer import rkNN
+    from rkNN_imputer.rkNN import rkNN
 
     dummy = np.array ((["0.2", "0.4", "5", "0.4", "6"],
                     ["?", "0.4", "8", "0.5", "8"],
@@ -47,6 +47,7 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
     imp.fit (dummy)
     imputed_dummy = imp.transform (dummy)
 
+    # show orignal and imputed dataset
     print (dummy)
     print ("")
     print (imputed_dummy)
