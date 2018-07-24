@@ -34,7 +34,6 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
 
 
     import numpy as np
-    from skrebate import MultiSURF
     from rkNN_imputer.rkNN import rkNN
 
     dummy = np.array ((["0.2", "0.4", "5", "0.4", "6"],
