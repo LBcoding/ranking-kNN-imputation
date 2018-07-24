@@ -54,7 +54,7 @@ The algorithm is designed to be integrated directly into scikit-learn machine le
 # Usage details
     class rkNN_imputer.rkNN rkNN (estimator=MultiSURF (), k=None)
 
-Parameters: 
+_Parameters: 
 
 estimator: object, optional (default=MultiSURF)
 
@@ -64,19 +64,19 @@ k: integer, optional (default=None)
                
 (The number of k-neighbours to consider to impute the missing value. If = None the number is autoamtically optimized. For values of k > number of instances, the method is equal to mean imputation).
 
-Attributes:
+_Attributes:
 
     fit (X, Y=None)
 
 Fit the imputer on X.
 
-Parameters: 
+_Parameters: 
 
 X : {array-like, sparse matrix}, shape (n_samples, n_features)
 
-(Input data, where n_samples is the number of samples and n_features is the number of features).
+(Input data, where n_samples is the number of samples and n_features is the number of features)
 
-Returns: 
+_Returns: 
 
 self : Imputer
 
