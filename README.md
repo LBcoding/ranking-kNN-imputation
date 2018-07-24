@@ -84,11 +84,11 @@ Impute all missing values in X.
 
 Parameters:	      X : {array-like, sparse matrix}, shape = (n_samples, n_features)
 
-_                 The input data to complete.
+\                 The input data to complete.
 
 Returns:          X_: {array-like, sparse matrix}, shape = (n_samples, n_features)
-.
-.                 The transformed (imputed) dataset
+
+\                 The transformed (imputed) dataset
 
 
                 
