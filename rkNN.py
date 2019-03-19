@@ -174,7 +174,7 @@ class rkNN (object):
                 NN = index [order]
                 
                 # order feature and find value (mean of k values)
-                print (self.k)
+                #print (self.k)
                 if self.k == None:              
                     distances = 1/distances
                     # calculate k via the elbow method
